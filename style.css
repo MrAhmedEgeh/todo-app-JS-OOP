@@ -1,0 +1,135 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --spanAfterColor: rgb(240, 62, 62);
+  }
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    padding: 20px;
+}
+.container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.container h1{
+    color: #1d2951;
+}
+.container h1 span{
+    color: #5f9ea0;
+}
+/*---------------------------------CONTAINER > TOP----------------*/
+.container .top{
+    height: 150px; 
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/*---------CONTAINER > TOP > SEARCH------*/
+.container .top #search{
+    padding: 10px 53px 10px 13px;
+    border: 1px solid #5f9ea0;
+}
+.container .top #search:focus{
+    border-color: rgb(240, 74, 74);
+}
+.container .top #searchBtn{
+    padding: 10px 50px;
+    border: 2px solid cadetblue;
+    background-color: cadetblue;
+    transition: 0.5s;
+    color: #fff;
+}
+.container .top #searchBtn:hover{
+    background-color: #fff;
+    cursor: pointer;
+    color: #5f9ea0;
+}
+/*---------CONTAINER > TOP > ADD------*/
+.container .top #add{
+    padding: 10px 110px 10px 12px; 
+    border: 1px solid #1d2951;
+}
+.container .top #add:focus{
+    border-color: rgb(240, 74, 74);
+}
+.container .top #addBtn{
+    padding: 10px 30px;
+    background-color: #1d2951;
+    color: #fff;
+    transition: 0.5s;
+    border: 2px solid #1d2951;
+}
+.container .top #addBtn:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: #1d2951;
+}
+/*---------------------------------CONTAINER > BOTTOM----------------*/
+.container .bottom{
+    flex: 1;
+    width: 600px;
+    overflow: auto;
+}
+.container .bottom .toDo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    border-left: 5px solid rgb(240, 62, 62);
+    /*box-shadow: 0px 0px 16px -6px #000000; */
+    box-shadow: 0px 0px 15px -6px #000000;
+    margin: 15px;
+}
+.container .bottom .toDo h3{
+    display: inline-block;
+}
+.container .bottom .toDo span{
+    position: relative;
+}
+.container .bottom .toDo span i{
+    color: #fff;
+    z-index: 11;
+}
+.container .bottom .toDo span:hover{
+    cursor: pointer;
+}
+.container .bottom .toDo span::after{
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    height: 65px;
+    width: 55px;
+    z-index: -1;
+    background-color: var(--spanAfterColor);
+}
+.pulse{
+    animation: pulse 0.5s 5;
+}
+@keyframes pulse {
+    0% {
+     box-shadow: 0px 0px 0px -6px rgba(95, 158, 160, 0.3);
+    }
+    70% {
+       box-shadow: 0 0 5px 8px rgba(95, 158, 160, 0.7); 
+    }
+    85% {
+        box-shadow: 0 0 4px 8px rgba(95, 158, 160, 0.7); 
+     }
+    100% {
+        box-shadow: 0px 0px 0px -6px rgba(95, 158, 160, 0.3);
+    }
+  }
